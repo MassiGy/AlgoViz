@@ -34,7 +34,7 @@ AlgoViz is web app based algorithms visualisation
     cd <repo_name>
 
     # to sync with origin
-    git push --set-upstream origin
+    git remote add upstream <repo_url>
     
     # to setup your locat dev branch
     git branch your_local_branch
