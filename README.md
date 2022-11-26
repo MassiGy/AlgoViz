@@ -42,9 +42,9 @@ AlgoViz is web app based algorithms visualisation
 
     # to add your changes
     git add *
-    git commit -m "your commit here"
+    git commit -m "+your_local_branch: your commit here"
 
 
     git push origin your_local_branch
-    
+
 ```
