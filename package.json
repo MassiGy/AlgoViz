@@ -19,8 +19,5 @@
   "bugs": {
     "url": "https://github.com/MassiGy/AlgoViz/issues"
   },
-  "homepage": "https://github.com/MassiGy/AlgoViz#readme",
-  "dependencies": {
-    "live-server": "^1.1.0"
-  }
+  "homepage": "https://github.com/MassiGy/AlgoViz#readme"
 }
