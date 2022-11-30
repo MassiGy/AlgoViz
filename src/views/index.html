@@ -41,7 +41,14 @@
        
       </ul>
       <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Enter an algorithm type" aria-label="Search">
+        <input class="form-control me-2" list="search"  type="search" placeholder="Enter an algorithm type" aria-label="Search">
+        <datalist id="search">
+            <option value="bubbleSort">
+            <option value="selectionSort">
+            <option value="insertionSort">
+            <option value="quickSort">
+            
+        </datalist>
         <button class="btn btn-outline-success" id="launcher"  type="submit">GoSorting</button>
       </form>
     </div>
