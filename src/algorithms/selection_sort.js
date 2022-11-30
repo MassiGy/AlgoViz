@@ -14,6 +14,7 @@ function sortBySelection(list) {
         list[i] = min;
         
     }
+    
 
 
 

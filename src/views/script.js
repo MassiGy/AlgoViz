@@ -34,8 +34,8 @@ console.log( bars.children);
 let offset = 0;
 let limit = 0;
 
-// // for(i =0; i < list.length; ++i)
-// // {
+// for(i =0; i < list.length; ++i)
+// {
     for(j = 0; j < list.length - 1; j++)
     {
         if(list[j] < list[j+1])
