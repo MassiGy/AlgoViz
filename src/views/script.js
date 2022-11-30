@@ -31,6 +31,7 @@ list.forEach((el, index) => {
     // set an id so as we can refrence it back, 
     // it is important that these ids are in synch with the ids on the list
     item.setAttribute("id", index);
+    item.setAttribute("class", "bars_item");
     bars.append(item);
 });
 
@@ -38,7 +39,7 @@ list.forEach((el, index) => {
 
 let launcher = document.getElementById("launcher");
 
-launcher.addEventListener("click", () => selection_sort(list, bars));
+launcher.addEventListener("click", () => bubble_sort(list, bars));
 
 
 
