@@ -31,65 +31,15 @@ list.forEach((el, index) => {
     // set an id so as we can refrence it back, 
     // it is important that these ids are in synch with the ids on the list
     item.setAttribute("id", index);
+    item.setAttribute("class", "bars_item");
     bars.append(item);
 });
-
-
-console.log( bars.children);
-
-let offset = 0;
-let limit = 0;
-
-// for(i =0; i < list.length; ++i)
-// {
-    for(j = 0; j < list.length - 1; j++)
-    {
-        if(list[j] < list[j+1])
-        {
-            temp = list[j];
-            list[j] = list[j+1];
-            list[j+1] = temp;
-            console.log(bars.children[j].init_xtranslate);
-
-
-            limit = parseInt(bars.children[j+1].init_xtranslate);
-            offset = 0;
-            
-            while(offset < limit)
-            {
-                bars.children[j].style.transform = `translate(${bars.children[j].init_xtranslate + offset}px,0%)`;
-                bars.children[j].init_xtranslate += offset;
-
-                bars.children[j+1].style.transform = `translate(${limit - offset}px,0%)`;
-                bars.children[j+1].init_xtranslate -= offset;
-                
-                console.log(bars.children[j+1].init_xtranslate);
-             
-                offset++;
-            }
-        }
-    }
-// // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 let launcher = document.getElementById("launcher");
 
-launcher.addEventListener("click", () => selection_sort(list, bars));
+launcher.addEventListener("click", () => bubble_sort(list, bars));
 
 
 

@@ -42,12 +42,8 @@ export default async function selection_sort(list, bars) {
 
 
 
-        // await sleep(2000);
+        await sleep(2000);
     }
     console.log(list);
 }
 
-
-
-    return list;
-}
