@@ -19,9 +19,12 @@
     <title>AlgoViz.net</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg " >
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">AlgoViz</a>
+        <a class="navbar-brand   mx-3" href="#">AlgoViz</a>
+        <button id="launcher" class="btn btn-outline-success mx-3">
+          Go Sorting
+        </button>
         <button
           class="navbar-toggler"
           type="button"
@@ -34,33 +37,14 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li>
-              <button id="launcher">Go Sorting</button>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Algorithms
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Bubble sort</a></li>
-                <li><a class="dropdown-item" href="#">Selection sort</a></li>
-              </ul>
-            </li>
-          </ul>
+         
         </div>
       </div>
     </nav>
-
+    
     <section class="container mx-auto">
       <div id="bars"></div>
     </section>
   </body>
-  <script type="module"  src="./script.js"></script>
+  <script type="module" src="./script.js"></script>
 </html>

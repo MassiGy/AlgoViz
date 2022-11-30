@@ -1,4 +1,5 @@
 import bubble_sort from "../algorithms/bubble_sort.js";
+import selection_sort from "../algorithms/selection_sort.js";
 
 
 let default_height = 600;
@@ -31,14 +32,13 @@ list.forEach((el, index) => {
     // it is important that these ids are in synch with the ids on the list
     item.setAttribute("id", index);
     bars.append(item);
-})
+});
 
 
 
+let launcher = document.getElementById("launcher");
 
-let launcher = document.getElementById("launcher")
-
-launcher.addEventListener("click", () => bubble_sort(list, bars))
+launcher.addEventListener("click", () => selection_sort(list, bars));
 
 
 
