@@ -5,6 +5,8 @@ export default async function bubble_sort(list, bars) {
     let temp = 0;
     let fst;
     let snd;
+
+    
     for (let i = 0; i < list.length; i++) {
         for (let j = 0; j < list.length - 1; j++) {
 

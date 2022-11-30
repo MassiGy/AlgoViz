@@ -4,9 +4,9 @@ export default async function selection_sort(list, bars) {
     let max;
     let max_index;
     let temp;
-    let fst;
-    let snd;
-
+    let max_bar;
+    let last_bar;
+    let val;
 
     for (let i = 0; i < list.length; i++) {
 
@@ -26,24 +26,23 @@ export default async function selection_sort(list, bars) {
         list[max_index] = temp;
 
         // swap the last sub array el and the max corresponding bars.
-        fst = bars.children.namedItem(String(max_index));
-        snd = bars.children.namedItem(String(list.length - i - 1));
+        max_bar = bars.children.namedItem(String(max_index));
+        last_bar = bars.children.namedItem(String(list.length - i - 1));
        
-
-        val = fst.style.transfrom;
-        fst.style.transfrom = snd.style.transfrom;
-        snd.style.transfrom = val;
-
-
+        
+        // swap their transform css proprety values
+        val = max_bar.style.transform;
+        max_bar.style.transform = last_bar.style.transform;
+        last_bar.style.transform = val;
+        
+       
         // swap the last sub array el bar id with the max bar id
-        temp = fst.getAttribute("id");
-        fst.setAttribute("id", snd.getAttribute("id"));
-        snd.setAttribute("id", temp);
+        temp = max_bar.getAttribute("id");
+        max_bar.setAttribute("id", last_bar.getAttribute("id"));
+        last_bar.setAttribute("id", temp);
 
-
-
+        // sleep 2s, since we are swapping two elements, and foreach of them the transition is 1s
         await sleep(2000);
     }
-    console.log(list);
 }
 
