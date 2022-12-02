@@ -15,7 +15,7 @@ let bars = document.getElementById("bars");
 //               position: relative;
 //               `;
 
-let list = [9, 1, 2, 4, 7, 5];
+let list = [1, 2, 9, 4, 7, 5];
 let item = null;
 
 list.forEach((el, index) => {
