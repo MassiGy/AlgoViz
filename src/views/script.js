@@ -1,6 +1,7 @@
 import bubble_sort from "../algorithms/bubble_sort.js";
 import selection_sort from "../algorithms/selection_sort.js";
 import insertion_sort from "../algorithms/insertion_sort.js";
+import * as MergeSort from "../algorithms/merge_sort.js";
 
 
 let default_height = 450;
@@ -38,9 +39,15 @@ list.forEach((el, index) => {
 
 
 
+console.log(list);
+MergeSort.merge_sort(list, bars);
+console.log(list);
+
+
+
 let launcher = document.getElementById("launcher");
 
-launcher.addEventListener("click", () => insertion_sort(list, bars));
+launcher.addEventListener("click", () => MergeSort.merge_sort(list, bars));
 
 
 
