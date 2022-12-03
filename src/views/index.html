@@ -40,17 +40,12 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
        
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" list="search"  type="search" placeholder="Enter an algorithm type" aria-label="Search">
+      <!-- <form class="d-flex"> -->
+        <input class="form-control me-2" list="search" id="search_input"  type="search" placeholder="Enter an algorithm type" >
         <datalist id="search">
-            <option value="bubbleSort">
-            <option value="selectionSort">
-            <option value="insertionSort">
-            <option value="quickSort">
-            
         </datalist>
         <button class="btn btn-outline-success" id="launcher"  type="submit">GoSorting</button>
-      </form>
+      <!-- </form> -->
     </div>
   </div>
 </nav>
@@ -63,6 +58,10 @@
       <div id="bars"> </div> 
     </div>
 
+
+    <script type="module" src="./script.js"></script>
+    <script type="module" src="./search.js"></script>
   </body>
-  <script type="module" src="./script.js"></script>
+  
+ 
 </html>

@@ -1,6 +1,7 @@
-/* body{
-    background-color:beige;
-} */
+#search_input{
+    width:270px;
+}
+
 
 #description{
     width:auto;
@@ -32,3 +33,4 @@
 .bars_item{
     border-radius: 5px;
 }
+
