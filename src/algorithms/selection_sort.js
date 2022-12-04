@@ -29,7 +29,10 @@ export default async function selection_sort(list, bars) {
         max_bar = bars.children.namedItem(String(max_index));
         last_bar = bars.children.namedItem(String(list.length - i - 1));
        
-        
+
+        max_bar.style.backgroundColor = "yellow";
+        last_bar.style.backgroundColor = "yellow";
+
         // swap their transform css proprety values
         val = max_bar.style.transform;
         max_bar.style.transform = last_bar.style.transform;
@@ -43,6 +46,9 @@ export default async function selection_sort(list, bars) {
 
         // sleep 2s, since we are swapping two elements, and foreach of them the transition is 1s
         await sleep(2000);
+
+        max_bar.style.backgroundColor = "grey";
+        last_bar.style.backgroundColor = "grey";
     }
 }
 

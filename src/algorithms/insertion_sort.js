@@ -32,6 +32,9 @@ export default async function insertion_sort(list, bars) {
                     el_to_insert = bars.children.namedItem(String(i));
                     insert_into_el = bars.children.namedItem(String(j));
 
+                    el_to_insert.style.backgroundColor = "yellow";
+                    insert_into_el.style.backgroundColor = "yellow";
+
                     val = el_to_insert.style.transform;
                     el_to_insert.style.transform = insert_into_el.style.transform;
                     insert_into_el.style.transform = val;
@@ -43,6 +46,9 @@ export default async function insertion_sort(list, bars) {
                     insert_into_el.setAttribute("id", temp);
 
                     await sleep(2000);
+
+                    el_to_insert.style.backgroundColor = "grey";
+                    insert_into_el.style.backgroundColor = "grey";
                 }
             }
         }
