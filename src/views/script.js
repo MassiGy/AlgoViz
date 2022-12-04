@@ -27,7 +27,7 @@ list.forEach((el, index) => {
             margin-top: ${default_height - (el * (default_height / max_list_number))}px;
             position: absolute;
             transform: translate(${parseFloat(index * default_width / list.length)}px, 0%);
-            transition: ${animation_delay_counter.value}s ease-in-out;
+            transition: ${animation_delay_counter.value}s ease;
             background-color: grey;
     `;
     // set an id so as we can refrence it back, 
