@@ -34,12 +34,13 @@ list.forEach((el, index) => {
 
 let launcher = document.getElementById("launcher");
 let algoName = document.getElementById('algoName');
+
 launcher.addEventListener("click", () => {
             let inputValue = document.getElementById('search_input').value;
             switch (inputValue) {
                 case "bubbleSort":
                     bubble_sort(list, bars);
-                    algoName.textContent = inputValue;
+                    algoName.textContent=inputValue;
                     break;
                 case "insertionSort":
                     insertion_sort(list, bars);
@@ -64,6 +65,12 @@ launcher.addEventListener("click", () => {
 
 });
 
+let resetButtun = document.getElementById('reset');
+resetButtun.addEventListener('click', () => reset()); 
+
+function reset() {
+    window.location.reload();
+}
 
 
 
