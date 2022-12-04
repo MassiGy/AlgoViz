@@ -1,7 +1,7 @@
 import bubble_sort from "../algorithms/bubble_sort.js";
 import selection_sort from "../algorithms/selection_sort.js";
 import insertion_sort from "../algorithms/insertion_sort.js";
-import * as MergeSort from "../algorithms/merge_sort.js";
+import merge_sort from "../algorithms/merge_sort.js";
 
 
 let default_height = 450;
@@ -16,8 +16,9 @@ let bars = document.getElementById("bars");
 //               position: relative;
 //               `;
 
-let list = [1, 2, 9, 4, 7, 5];
+let list = [1, 9, 2, 6, 4, 7, 5];
 let item = null;
+
 
 list.forEach((el, index) => {
     item = document.createElement('div');
@@ -38,16 +39,9 @@ list.forEach((el, index) => {
 });
 
 
-
-console.log(list);
-MergeSort.merge_sort(list, bars);
-console.log(list);
-
-
-
 let launcher = document.getElementById("launcher");
 
-launcher.addEventListener("click", () => MergeSort.merge_sort(list, bars));
+launcher.addEventListener("click", () => { list = merge_sort(list, bars); console.log(list) });
 
 
 
