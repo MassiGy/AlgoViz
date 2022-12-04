@@ -32,3 +32,9 @@
 .bars_item{
     border-radius: 5px;
 }
+
+
+.form-label{
+    margin-bottom: 0px;
+    font-weight: bold;
+}

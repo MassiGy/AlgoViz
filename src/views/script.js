@@ -5,23 +5,29 @@ import insertion_sort from "../algorithms/insertion_sort.js";
 
 let default_height = 450;
 let default_width = 600;
+let max_list_number = 30;
 
 
 let bars = document.getElementById("bars");
+let animation_delay_counter = document.getElementById("animation-delay");
+let bars_number_counter = document.getElementById("bars-count");
 
-let list = [1, 9, 2, 6, 4, 7, 5];
+
+
+let list = Array.from({ length: parseInt(bars_number_counter.value) },
+    () => Math.floor((Math.random() * max_list_number) + 1));;
+
 let item = null;
-
 
 list.forEach((el, index) => {
     item = document.createElement('div');
     item.style = `
             width: ${(default_width / 2) / list.length}px;
-            height: ${el * (default_height / 10)}px;
-            margin-top: ${default_height - (el * (default_height / 10))}px;
+            height: ${el * (default_height / max_list_number)}px;
+            margin-top: ${default_height - (el * (default_height / max_list_number))}px;
             position: absolute;
             transform: translate(${parseFloat(index * default_width / list.length)}px, 0%);
-            transition: .5s ease-in-out;
+            transition: ${animation_delay_counter.value}s ease-in-out;
             background-color: grey;
     `;
     // set an id so as we can refrence it back, 
@@ -35,9 +41,10 @@ list.forEach((el, index) => {
 let launcher = document.getElementById("launcher");
 
 
-launcher.addEventListener("click", () => insertion_sort(list, bars));
+launcher.addEventListener("click", () => bubble_sort(list, bars));
 
-
+animation_delay_counter.addEventListener("change", () => window.location.reload());
+bars_number_counter.addEventListener("change", () => window.location.reload());
 
 
 
