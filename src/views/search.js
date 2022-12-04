@@ -1,7 +1,7 @@
 let searchInput = document.getElementById('search_input');
 
 
-let algosTypes = ["bubbleSort","insertionSort", "selectionSort", "quickSort","mergeSort"];
+let algosTypes = ["bubbleSort","insertionSort", "selectionSort"];
 
 searchInput.addEventListener("input", (e) => {
    

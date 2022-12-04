@@ -36,10 +36,39 @@ list.forEach((el, index) => {
 });
 
 
-
+//
 let launcher = document.getElementById("launcher");
+let algoName = document.getElementById('algoName');
+launcher.addEventListener("click", () => {
+            let inputValue = document.getElementById('search_input').value;
+            switch (inputValue) {
+                case "bubbleSort":
+                    bubble_sort(list, bars);
+                    algoName.textContent = inputValue;
+                    break;
+                case "insertionSort":
+                    insertion_sort(list, bars);
+                    
+                    algoName.textContent = inputValue;
+                    break;
+                case "selectionSort":
+                    selection_sort(list, bars);
+                    
+                    algoName.textContent = inputValue;
+                    break;
+                case "mergeSort":
+                    merge_sort(list, bars);
+                    
+                    algoName.textContent = inputValue;
+                    break;
+                default:
+                    break;
+    
+            }
 
-launcher.addEventListener("click", () => bubble_sort(list, bars));
+
+});
+
 
 
 
