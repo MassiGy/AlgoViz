@@ -1,5 +1,6 @@
 import bubble_sort from "../algorithms/bubble_sort.js";
 import selection_sort from "../algorithms/selection_sort.js";
+import insertion_sort from "../algorithms/insertion_sort.js";
 
 
 let default_height = 450;
@@ -7,15 +8,10 @@ let default_width = 600;
 
 
 let bars = document.getElementById("bars");
-// bars.style = `width: ${default_width}px; 
-//               height: ${default_height}px;
-//               margin: auto auto;
-//               background-color: grey;
-//               position: relative;
-//               `;
 
-let list = [9, 1, 2, 4, 7, 5];
+let list = [1, 9, 2, 6, 4, 7, 5];
 let item = null;
+
 
 list.forEach((el, index) => {
     item = document.createElement('div');
@@ -25,7 +21,7 @@ list.forEach((el, index) => {
             margin-top: ${default_height - (el * (default_height / 10))}px;
             position: absolute;
             transform: translate(${parseFloat(index * default_width / list.length)}px, 0%);
-            transition: 1s ease-in-out;
+            transition: .5s ease-in-out;
             background-color: grey;
     `;
     // set an id so as we can refrence it back, 
@@ -36,7 +32,6 @@ list.forEach((el, index) => {
 });
 
 
-//
 let launcher = document.getElementById("launcher");
 let algoName = document.getElementById('algoName');
 launcher.addEventListener("click", () => {
