@@ -8,7 +8,9 @@ AlgoViz is web based algorithms visualisation for simple sorting algorithms.
 - Massiles Ghernaout | @MassiGy
 - Jugurtah Ourzik    | @JugurtaO
 
+### Website State
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a6457340-3361-4a51-8def-a37ca599aac4/deploy-status)](https://app.netlify.com/sites/algosviz/deploys)
 
 ### File structure.
 
