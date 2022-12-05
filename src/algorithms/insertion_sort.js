@@ -1,6 +1,6 @@
 import sleep from "../helpers/sleep.js";
 
-export default async function insertion_sort(list, bars) {
+export default async function insertion_sort(list, bars,delay) {
 
     // set the sub sorted array last index to 0 initially
     let sorted_array_last_index = 0;
@@ -45,7 +45,7 @@ export default async function insertion_sort(list, bars) {
                     el_to_insert.setAttribute("id", insert_into_el.getAttribute("id"));
                     insert_into_el.setAttribute("id", temp);
 
-                    await sleep(2000);
+                    await sleep(delay * 1500);
 
                     el_to_insert.style.backgroundColor = "grey";
                     insert_into_el.style.backgroundColor = "grey";

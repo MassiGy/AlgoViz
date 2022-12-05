@@ -1,6 +1,6 @@
 import sleep from "../helpers/sleep.js";
 
-export default async function bubble_sort(list, bars) {
+export default async function bubble_sort(list, bars, delay) {
     let val;
     let temp = 0;
     let fst;
@@ -34,8 +34,8 @@ export default async function bubble_sort(list, bars) {
                 snd.setAttribute("id", temp);
 
 
-                // sleep 2s, since we are swapping two elements, and foreach of them the transition is 1s
-                await sleep(2000);
+                // sleep, since we are swapping two elements, and we need a transition to see the sawapping effect
+                await sleep(delay * 1500);
 
                 fst.style.backgroundColor = "grey";
                 snd.style.backgroundColor = "grey";

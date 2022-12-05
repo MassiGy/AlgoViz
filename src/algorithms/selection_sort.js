@@ -1,6 +1,6 @@
 import sleep from "../helpers/sleep.js";
 
-export default async function selection_sort(list, bars) {
+export default async function selection_sort(list, bars, delay) {
     let max;
     let max_index;
     let temp;
@@ -28,7 +28,7 @@ export default async function selection_sort(list, bars) {
         // swap the last sub array el and the max corresponding bars.
         max_bar = bars.children.namedItem(String(max_index));
         last_bar = bars.children.namedItem(String(list.length - i - 1));
-       
+
 
         max_bar.style.backgroundColor = "yellow";
         last_bar.style.backgroundColor = "yellow";
@@ -37,18 +37,19 @@ export default async function selection_sort(list, bars) {
         val = max_bar.style.transform;
         max_bar.style.transform = last_bar.style.transform;
         last_bar.style.transform = val;
-        
-       
+
+
         // swap the last sub array el bar id with the max bar id
         temp = max_bar.getAttribute("id");
         max_bar.setAttribute("id", last_bar.getAttribute("id"));
         last_bar.setAttribute("id", temp);
 
         // sleep 2s, since we are swapping two elements, and foreach of them the transition is 1s
-        await sleep(2000);
+        await sleep(delay * 1500);
 
         max_bar.style.backgroundColor = "grey";
         last_bar.style.backgroundColor = "grey";
+
     }
 }
 

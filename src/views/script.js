@@ -5,7 +5,7 @@ import insertion_sort from "../algorithms/insertion_sort.js";
 
 let default_height = 450;
 let default_width = 600;
-let max_list_number = 30;
+let max_list_number = 150;
 
 
 let bars = document.getElementById("bars");
@@ -15,7 +15,9 @@ let bars_number_counter = document.getElementById("bars-count");
 
 
 let list = Array.from({ length: parseInt(bars_number_counter.value) },
-    () => Math.floor((Math.random() * max_list_number) + 1));;
+    () => Math.floor((Math.random() * max_list_number) + 2));
+
+
 
 let item = null;
 
@@ -45,16 +47,16 @@ launcher.addEventListener("click", () => {
     let inputValue = document.getElementById('search_input').value;
     switch (inputValue) {
         case "bubbleSort":
-            bubble_sort(list, bars);
+            bubble_sort(list, bars, animation_delay_counter.value);
             algoName.textContent = inputValue;
             break;
         case "insertionSort":
-            insertion_sort(list, bars);
+            insertion_sort(list, bars, animation_delay_counter.value);
 
             algoName.textContent = inputValue;
             break;
         case "selectionSort":
-            selection_sort(list, bars);
+            selection_sort(list, bars, animation_delay_counter.value);
 
             algoName.textContent = inputValue;
             break;
@@ -76,7 +78,6 @@ let resetButtun = document.getElementById('reset');
 resetButtun.addEventListener('click', () => reset());
 
 
-launcher.addEventListener("click", () => bubble_sort(list, bars));
 
 animation_delay_counter.addEventListener("change", () => window.location.reload());
 bars_number_counter.addEventListener("change", () => window.location.reload());
