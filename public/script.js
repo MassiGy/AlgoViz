@@ -1,6 +1,6 @@
-import bubble_sort from "../algorithms/bubble_sort.js";
-import selection_sort from "../algorithms/selection_sort.js";
-import insertion_sort from "../algorithms/insertion_sort.js";
+import bubble_sort from "./algorithms/bubble_sort.js";
+import selection_sort from "./algorithms/selection_sort.js";
+import insertion_sort from "./algorithms/insertion_sort.js";
 
 
 let default_height = 450;
