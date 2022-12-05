@@ -1,0 +1,42 @@
+#search_input{
+    width:270px;
+}
+
+
+#description{
+    width:auto;
+    height: 30px;
+    text-align: center;
+
+    
+    
+}
+
+
+.container{
+    width: auto;
+    display: flex;
+    justify-content: center;
+
+}
+
+#bars {
+    margin-top: 30px;
+    background-color:white;
+    position: relative;
+    width: 600px;
+    height: 460px;
+    border: ridge #ccc;
+    border-width: 6px;
+    
+}
+
+.bars_item{
+    border-radius: 5px;
+}
+
+
+.form-label{
+    margin-bottom: 0px;
+    font-weight: bold;
+}
