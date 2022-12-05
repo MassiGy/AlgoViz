@@ -27,7 +27,7 @@ list.forEach((el, index) => {
             margin-top: ${default_height - (el * (default_height / max_list_number))}px;
             position: absolute;
             transform: translate(${parseFloat(index * default_width / list.length)}px, 0%);
-            transition: ${animation_delay_counter.value}s ease;
+            transition: ${animation_delay_counter.value}s ease-in-out;
             background-color: grey;
     `;
     // set an id so as we can refrence it back, 
@@ -42,41 +42,39 @@ let launcher = document.getElementById("launcher");
 let algoName = document.getElementById('algoName');
 
 launcher.addEventListener("click", () => {
-            let inputValue = document.getElementById('search_input').value;
-            switch (inputValue) {
-                case "bubbleSort":
-                    bubble_sort(list, bars);
-                    algoName.textContent=inputValue;
-                    break;
-                case "insertionSort":
-                    insertion_sort(list, bars);
-                    
-                    algoName.textContent = inputValue;
-                    break;
-                case "selectionSort":
-                    selection_sort(list, bars);
-                    
-                    algoName.textContent = inputValue;
-                    break;
-                case "mergeSort":
-                    merge_sort(list, bars);
-                    
-                    algoName.textContent = inputValue;
-                    break;
-                default:
-                    break;
-    
-            }
+    let inputValue = document.getElementById('search_input').value;
+    switch (inputValue) {
+        case "bubbleSort":
+            bubble_sort(list, bars);
+            algoName.textContent = inputValue;
+            break;
+        case "insertionSort":
+            insertion_sort(list, bars);
+
+            algoName.textContent = inputValue;
+            break;
+        case "selectionSort":
+            selection_sort(list, bars);
+
+            algoName.textContent = inputValue;
+            break;
+
+        default:
+            break;
+
+    }
 
 
 });
 
-let resetButtun = document.getElementById('reset');
-resetButtun.addEventListener('click', () => reset()); 
 
 function reset() {
     window.location.reload();
 }
+
+let resetButtun = document.getElementById('reset');
+resetButtun.addEventListener('click', () => reset());
+
 
 launcher.addEventListener("click", () => bubble_sort(list, bars));
 
