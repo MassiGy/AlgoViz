@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,12 +7,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const sleep_js_1 = __importDefault(require("../helpers/sleep.js"));
-function insertion_sort(list, bars, delay) {
+import sleep from "../helpers/sleep.js";
+export default function insertion_sort(list, bars, delay) {
     return __awaiter(this, void 0, void 0, function* () {
         // set the sub sorted array last index to 0 initially
         let sorted_array_last_index = 0;
@@ -43,10 +38,10 @@ function insertion_sort(list, bars, delay) {
                         el_to_insert.style.transform = insert_into_el.style.transform;
                         insert_into_el.style.transform = val;
                         // change the ids, to preserve the relation between the id and the position on the bars container
-                        temp = el_to_insert.getAttribute("id");
-                        el_to_insert.setAttribute("id", insert_into_el.getAttribute("id"));
-                        insert_into_el.setAttribute("id", temp);
-                        yield (0, sleep_js_1.default)(delay * 1500);
+                        temp = Number(el_to_insert.getAttribute("id"));
+                        el_to_insert.setAttribute("id", String(insert_into_el.getAttribute("id")));
+                        insert_into_el.setAttribute("id", String(temp));
+                        yield sleep(delay * 1500);
                         el_to_insert.style.backgroundColor = "grey";
                         insert_into_el.style.backgroundColor = "grey";
                     }
@@ -57,4 +52,3 @@ function insertion_sort(list, bars, delay) {
         }
     });
 }
-exports.default = insertion_sort;

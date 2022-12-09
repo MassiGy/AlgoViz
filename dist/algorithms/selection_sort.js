@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,12 +7,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const sleep_js_1 = __importDefault(require("../helpers/sleep.js"));
-function selection_sort(list, bars, delay) {
+import sleep from "../helpers/sleep.js";
+export default function selection_sort(list, bars, delay) {
     return __awaiter(this, void 0, void 0, function* () {
         let max;
         let max_index;
@@ -44,14 +39,13 @@ function selection_sort(list, bars, delay) {
             max_bar.style.transform = last_bar.style.transform;
             last_bar.style.transform = val;
             // swap the last sub array el bar id with the max bar id
-            temp = max_bar.getAttribute("id");
-            max_bar.setAttribute("id", last_bar.getAttribute("id"));
-            last_bar.setAttribute("id", temp);
+            temp = Number(max_bar.getAttribute("id"));
+            max_bar.setAttribute("id", String(last_bar.getAttribute("id")));
+            last_bar.setAttribute("id", String(temp));
             // sleep 2s, since we are swapping two elements, and foreach of them the transition is 1s
-            yield (0, sleep_js_1.default)(delay * 1500);
+            yield sleep(delay * 1500);
             max_bar.style.backgroundColor = "grey";
             last_bar.style.backgroundColor = "grey";
         }
     });
 }
-exports.default = selection_sort;

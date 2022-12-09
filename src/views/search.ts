@@ -1,30 +1,31 @@
-let searchInput = document.getElementById('search_input');
+let searchInput = document.querySelector('#search_input') as HTMLInputElement;
 
 
-let algosTypes = ["bubbleSort","insertionSort", "selectionSort"];
+let algosTypes: string[] = ["bubbleSort","insertionSort", "selectionSort"];
+const datalist = document.querySelector("#search") as HTMLDataListElement
+let item: HTMLElement;
 
 searchInput.addEventListener("input", (e) => {
    
     removeItems();
     for (let i of algosTypes) {
 
-       
         if (i.toLowerCase().startsWith(searchInput.value.toLowerCase()) && searchInput.value != "") {
-            let item = document.createElement("option");
+
+            item = document.createElement("option");
+
             item.setAttribute('class', 'list-item');
             item.setAttribute("onclick", "displayNames('" + i + "')" );
             item.setAttribute('value', i);
-            let datalist = document.querySelector("#search")
+
             datalist.appendChild(item);
-            
-            
         }
 
     };
 
 })
 
-function displayNames(value) {
+function displayNames(value: string) {
     searchInput.value = value;
 }
 

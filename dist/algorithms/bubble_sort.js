@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,15 +7,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const sleep_js_1 = __importDefault(require("../helpers/sleep.js"));
-function bubble_sort(list, bars, delay) {
+import sleep from "../helpers/sleep.js";
+export default function bubble_sort(list, bars, delay) {
     return __awaiter(this, void 0, void 0, function* () {
         let val;
-        let temp = 0;
+        let temp;
         let fst;
         let snd;
         for (let i = 0; i < list.length; i++) {
@@ -35,12 +30,12 @@ function bubble_sort(list, bars, delay) {
                     val = fst.style.transform;
                     fst.style.transform = snd.style.transform;
                     snd.style.transform = val;
-                    // swap their ids, since id is thier index on the outer div (canvas) 
-                    temp = fst.getAttribute("id");
-                    fst.setAttribute("id", snd.getAttribute("id"));
-                    snd.setAttribute("id", temp);
+                    // swap their ids, since id is thier index on the outer div (canvas)
+                    temp = Number(fst.getAttribute("id"));
+                    fst.setAttribute("id", String(snd.getAttribute("id")));
+                    snd.setAttribute("id", String(temp));
                     // sleep, since we are swapping two elements, and we need a transition to see the sawapping effect
-                    yield (0, sleep_js_1.default)(delay * 1500);
+                    yield sleep(delay * 1500);
                     fst.style.backgroundColor = "grey";
                     snd.style.backgroundColor = "grey";
                 }
@@ -48,4 +43,3 @@ function bubble_sort(list, bars, delay) {
         }
     });
 }
-exports.default = bubble_sort;
