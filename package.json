@@ -1,0 +1,25 @@
+{
+  "name": "algoviz",
+  "version": "1.0.0",
+  "description": "AlgoViz is web based algorithms visualisation for simple sorting algorithms.",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "prebuild": "rm -rf ./dist",
+    "build": "tsc ./src/*",
+    "dev" : "tsc --watch && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MassiGy/AlgoViz.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MassiGy/AlgoViz/issues"
+  },
+  "homepage": "https://github.com/MassiGy/AlgoViz#readme"
+}

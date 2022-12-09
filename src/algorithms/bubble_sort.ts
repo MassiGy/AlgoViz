@@ -1,6 +1,6 @@
 import sleep from "../helpers/sleep.js";
 
-export default async function bubble_sort(list, bars, delay) {
+export default async function bubble_sort(list : {}, bars, delay) {
     let val;
     let temp = 0;
     let fst;
